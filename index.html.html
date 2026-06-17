@@ -3,461 +3,548 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tanish Rohil — MBA Candidate, Personal portfolio for club selections." />
+  <meta name="description" content="Tanish Rohil — MBA-BM Candidate at XIMB · Former SAP Integration Developer at Deloitte" />
   <title>Tanish Rohil | MBA Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="icon" type="image/png" href="./Ximb_logo_trans.png" />
-  <link rel="stylesheet" href="style_updated.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-logo">
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#interests">Interests</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#strengths">Strengths</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon" id="themeIcon"></i>
-      </button>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<!-- MATRIX CANVAS (full-page bg) -->
+<canvas id="matrixCanvas"></canvas>
 
-  <section class="hero" id="home">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-content">
-      <div class="hero-photo-wrapper">
-        <div class="hero-monogram" id="heroMonogram">TR</div>
-        <div class="hero-photo-frame">
-          <img style="border-radius: 25%; width: 100%; height: auto; transform: scale(1.20); object-fit: cover;"
-            src="TanishPassport.png"
-            alt="Tanish Rohil"
-            class="hero-photo"
-            id="heroPhoto"
-          />
-        </div>
-        <div class="hero-photo-ring"></div>
-      </div>
-      <div class="hero-text">
-        <p class="hero-eyebrow">MBA-BM · XIMB 2026–2028</p>
-        <h1 class="hero-name">Tanish <em>Rohil</em></h1>
-        <div class="hero-typewriter-container" style="flex-direction: column; align-items: flex-start; height: auto;">
-          <span class="hero-typewriter" id="typewriter1"></span>
-          <span class="hero-typewriter" id="typewriter2" style="margin-top: 4px;"></span>
-        </div>
-        <div class="hero-cta">
-          <a href="#about" class="btn btn-primary">About Me</a>
-          <a href="#projects" class="btn btn-ghost">My Projects</a>
-          <a href="#contact" class="btn btn-ghost">Contact Me</a>
-        </div>
-        <div class="hero-social">
-          <a href="https://www.linkedin.com/in/tanish-rohil-447b3a212/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/tanishrohil" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="mailto:tanishrohilcbit@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll to explore</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <span class="nav-logo-bracket">[</span>
+    <span class="nav-logo-name">tanish</span>
+    <span class="nav-logo-at">@</span>
+    <span class="nav-logo-host">ximb</span>
+    <span class="nav-logo-bracket">]</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"        data-num="01">about</a></li>
+    <li><a href="#journey"      data-num="02">journey</a></li>
+    <li><a href="#skills"       data-num="03">skills</a></li>
+    <li><a href="#achievements" data-num="04">achievements</a></li>
+    <li><a href="#projects"     data-num="06">projects</a></li>
+    <li><a href="#interests"    data-num="05">interests</a></li>
+    <li><a href="#gallery"      data-num="07">gallery</a></li>
+    <li><a href="#strengths"    data-num="08">strengths</a></li>
+    <li><a href="#contact"      data-num="09">contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <section class="section about-section" id="about">
-    <div class="container">
-      <div class="section-label">01 · About</div>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <h2 class="section-heading">Hello, I'm <em>Tanish</em></h2>
-          <p class="about-lead">
-             I am from Hyderabad. I completed my 11th and 12th in the Science stream, and my graduation in Computer Science Engineering from CBIT, Hyderabad.
-          </p>
-          <p>
-            After graduating, I worked two years at Deloitte USI Consulting,
-            as an SAP Integration Developer. My work involves connecting with clients, understanding their requirements, and developing efficient technical solutions. I have been involved across different stages of projects, from requirement gathering to go-live and post go-live support, which has given me exposure to end-to-end project execution and client interaction.
-          </p>
-          <p>
-            For me, an MBA is the right way to bridge the gap between technical expertise and managerial expertise, enabling me to become a more well-rounded professional who can contribute not only through execution, but also through informed decision-making and leadership.That realisation brought me to XIMB.
-          </p>
-        </div>
-        <div class="about-card-stack reveal">
-          <div class="stat-card">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Years of Technical Consulting Experience</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">2</span>
-            <span class="stat-label"> Applause Awards Received</span>
-          </div>
-        </div>
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-hexgrid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="boot-line">
+        <span class="nav-logo-bracket" style="font-family:var(--font-mono);font-size:0.72rem">//&nbsp;system.boot&nbsp;&mdash;&nbsp;all_modules_loaded</span>
+        <span class="boot-ok">✓ OK</span>
+      </div>
+
+      <h1 class="hero-name glitch" data-text="Tanish Rohil">
+        <span class="hero-name-line1">Tanish</span>
+        <span class="hero-name-line2">Rohil</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="ty-prompt">$&nbsp;</span>
+        <span class="ty-text" id="typewriter"></span>
+        <span class="ty-cursor"></span>
+      </div>
+
+      <p class="hero-bio">
+     If you are willing to do more than you are paid to do, eventually you will be paid to do more than you do.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#about"   class="btn btn-g"><i class="fas fa-terminal"></i>&nbsp;./about_me</a>
+        <a href="#projects" class="btn btn-ghost"><i class="fas fa-code-branch"></i>&nbsp;git log --projects</a>
+        <a href="#contact"  class="btn btn-ghost"><i class="fas fa-at"></i>&nbsp;ping me</a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/tanish-rohil-447b3a212/" target="_blank" class="soc-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/tanishrohil" target="_blank" class="soc-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:tanishrohilcbit@gmail.com" class="soc-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-  </section>
 
-  <section class="section journey-section" id="journey">
-    <div class="container">
-      <div class="section-label">02 · Journey</div>
-      <h2 class="section-heading reveal">The Road That Led Here</h2>
-      <p class="section-sub reveal">Every milestone shaped the way I think, lead, and grow.</p>
-      <div class="timeline">
+    <div class="hero-right">
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2003</div>
-          <div class="timeline-card">
-            <h3>Born in Hyderabad, Telangana</h3>
-            <p>Growing up in a family with early exposure to the IT industry shaped my interest in technology and problem-solving.</p>
-          </div>
+      <!-- Profile -->
+      <div class="profile-card">
+        <div class="prof-avatar">
+          <img src="TanishPassport.png" alt="Tanish Rohil" />
+          <span class="prof-online"></span>
         </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2015–2018</div>
-          <div class="timeline-card">
-            <h3>High School Education - Sri Chaitanya Techno School</h3>
-            <p>Telangana Board of Secondary Education
-              <br>CGPA: 10
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2018–2020</div>
-          <div class="timeline-card">
-            <h3>Intermediate Education - Narayana Junior College</h3>
-            <p> Telangana State Board of Intermediate Education(TSBIE)
-              <br>Percentage: 98.4%
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2020–2024</div>
-          <div class="timeline-card">
-            <h3>B.Tech in Computer Science Engineering - Chaitanya Bharathi Institute of Technology(CBIT)</h3>
-            <p> CGPA: 9.4 
-              <br>Part of the United Coders Club.<br> Published a patent for "Smart Jacket for Miners Working in Hazardous Conditions”, integrating IoT with core CSE concepts.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024–2026</div>
-          <div class="timeline-card">
-            <h3>SAP Integration Developer — Deloitte USI Consulting</h3>
-            <p>Worked on a greenfield SAP implementation project for a Fortune 500 HealthCare client. Recognised with multiple "Applause Awards" during the FY 2025–26.</p>
-          </div>
-        </div>
-      
-         <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2026</div>
-          <div class="timeline-card">
-            <h3>Xavier's Admission Test for Management (XAT) — 2026</h3>
-            <p>Percentile: 99.25 
-              <br>QADI: 99.16 percentile
-              <br>DM: 98.5 percentile
-              <br>VARC: 79.9 percentile
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot gold"></div>
-          <div class="timeline-date">2026 →</div>
-          <div class="timeline-card highlight">
-            <h3>MBA-BM — XIM University, Bhubaneswar</h3>
-            <p>Currently in the MBA-BM program. The next chapter of a purposeful journey - one I'm writing with intention.</p>
-          </div>
+        <div>
+          <div class="prof-name">Tanish Rohil Gali</div>
+          <div class="prof-role">MBA-BM · XIMB 2026–28</div>
+          <span class="prof-badge"><i class="fas fa-building" style="font-size:0.65rem"></i>&nbsp;ex-Deloitte USI</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section skills-section" id="skills">
-    <div class="container">
-      <div class="section-label">03 · Competencies</div>
-      <h2 class="section-heading reveal">Skills Toolkit</h2>
-      
-      <div class="hobbies-grid" style="margin-top: 32px;">
-        <div class="hobby-card reveal" style="--delay:0.1s; padding: 24px;">
-          <div class="hobby-icon"><i class="fas fa-cubes"></i></div>
-          <h4 style="margin-bottom: 16px;">Core SAP Architecture</h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">SAP CPI</span>
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">SAP ABAP (Basics)</span>
-          </div>
+      <!-- Terminal block -->
+      <div class="terminal">
+        <div class="t-bar">
+          <span class="t-dot" style="background:#ff5f57"></span>
+          <span class="t-dot" style="background:#febc2e"></span>
+          <span class="t-dot" style="background:#28c840"></span>
+          <span class="t-title">tanish.exe:~$ node profile.js</span>
         </div>
-
-        <div class="hobby-card reveal" style="--delay:0.15s; padding: 24px;">
-          <div class="hobby-icon"><i class="fas fa-code"></i></div>
-          <h4 style="margin-bottom: 16px;">Programming Languages</h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">Python</span>
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">C++</span>
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">SQL</span>
-          </div>
-        </div>
-
-        <div class="hobby-card reveal" style="--delay:0.2s; padding: 24px;">
-          <div class="hobby-icon"><i class="fas fa-briefcase"></i></div>
-          <h4 style="margin-bottom: 16px;">Consulting & Management</h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">Stakeholder Management</span>
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">Agile / Scrum Methodology</span>
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">Defect Triaging & Root-Cause Analysis</span>
-            <span style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2); padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">System Integration Testing (SIT) & UAT Coordination</span>
-          </div>
+        <div class="t-body">
+          <div><span class="t-g">const</span> <span class="t-p">profile</span> <span class="t-g">=</span> {</div>
+          <div style="padding-left:18px"><span class="t-p">name</span><span class="t-m">:</span> <span class="t-a">"Tanish Rohil Gali"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">program</span><span class="t-m">:</span> <span class="t-a">"MBA-BM · XIMB"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">batch</span><span class="t-m">:</span> <span class="t-b">2026</span><span class="t-m">–</span><span class="t-b">2028</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">xat_percentile</span><span class="t-m">:</span> <span class="t-b">99.25</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">exp</span><span class="t-m">:</span> <span class="t-a">"Deloitte USI · 2yr"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">awards</span><span class="t-m">:</span> [<span class="t-a">"Applause"</span><span class="t-m">,</span> <span class="t-a">"Applause"</span>]<span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">status</span><span class="t-m">:</span> <span class="t-g">"active"</span></div>
+          <div>};</div>
+          <div style="height:6px"></div>
+          <div><span class="t-g">✓</span> <span class="t-m">Profile loaded successfully.</span></div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section achievements-section" id="achievements">
-    <div class="container">
-      <div class="section-label">04 · Achievements</div>
-      <h2 class="section-heading reveal">Milestones & Recognition</h2>
-      
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="why-number"><i class="fas fa-award"></i></div>
-          <h3>Deloitte USI Applause Awards</h3>
-          <p>Received two distinct Applause Awards during the fiscal year 2025–26 for excellence in interface stabilization during critical client go-live milestones.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-number"><i class="fas fa-file-alt"></i></div>
-          <h3>International Research Presentation</h3>
-          <p>Presented a research paper titled "Python source code Analysis for Bug Detection using Transformers" at the international ERCICA-2024 Conference.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-number"><i class="fas fa-certificate"></i></div>
-          <h3>Published Design Patent</h3>
-          <p>Successfully published a design patent for an innovative industrial safety framework titled "Real time Data Monitoring Smart Mining Jacket".</p>
-        </div>
+      <!-- Live strip -->
+      <div class="live-strip">
+        <div class="ls-item"><span class="ls-dot"></span><span>Session&nbsp;</span><span class="ls-val" id="uptime">0m 0s</span></div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="section hobbies-section" id="interests">
-    <div class="container">
-      <div class="section-label">05 · Interests</div>
-      <h2 class="section-heading reveal">Beyond the Classroom</h2>
-      <p class="section-sub reveal">The activities that keep me energized, entertained, and constantly learning.</p>
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="scroll-arr"></div>
+  </div>
+</section>
 
-      <div class="hobbies-grid">
-        <div class="hobby-card reveal" style="--delay:0.1s">
-          <div class="hobby-icon"><i class="fas fa-baseball-ball"></i></div>
-          <h4>Cricket</h4>
-          <p>Whether playing with friends or following international tournaments, cricket has taught me teamwork, resilience, and the importance of performing under pressure.</p>
-        </div>
-
-        <div class="hobby-card reveal" style="--delay:0.15s">
-          <div class="hobby-icon"><i class="fas fa-dumbbell"></i></div>
-          <h4>Professional Wrestling</h4>
-          <p>A long-time WWE fan, I enjoy the blend of storytelling, athleticism, and entertainment. It has given me an appreciation for branding, audience engagement, and performance.</p>
-        </div>
-
-        <div class="hobby-card reveal" style="--delay:0.2s">
-          <div class="hobby-icon"><i class="fas fa-film"></i></div>
-          <h4>Movies</h4>
-          <p>From action-packed blockbusters to thought-provoking dramas, movies offer new perspectives, memorable stories, and insights into different cultures and ideas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section projects-section" id="projects">
+<!-- ═══ ABOUT ═══ -->
+<section class="section about-section" id="about">
   <div class="container">
-    <div class="section-label">06 · Projects</div>
-    <h2 class="section-heading reveal" style="margin-bottom: 24px; font-size: 1.75rem; font-weight: 600;">Selected Works</h2>
-    
-    <div class="projects-grid" style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 20px; width: 100%; justify-content: space-between; align-items: stretch;">
-      
-      <div class="project-card reveal" style="flex: 1; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box;">
-        <div>
-          <div class="project-header">
-            <h3 style="margin-top: 0; margin-bottom: 12px;">SAP ERP & 3PL WMS Integration</h3>
+    <div class="s-tag reveal">01 · about</div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2 class="s-head">Hello, I'm <em>Tanish</em></h2>
+        <p class="about-p">
+          I am from Hyderabad. I completed my 11th and 12th in the Science stream,
+          and my graduation in Computer Science Engineering from CBIT, Hyderabad.
+        </p>
+        <p class="about-p">
+          After graduating, I worked two years at Deloitte USI Consulting as an SAP Integration Developer.
+          My work involved connecting with clients, understanding requirements, and developing efficient
+          technical solutions — from requirement gathering to go-live and post-go-live support.
+        </p>
+        <p class="about-p">
+          For me, an MBA bridges technical expertise and managerial expertise — enabling me to contribute
+          not only through execution, but through informed decision-making and leadership.
+          That realisation brought me to XIMB.
+        </p>
+      </div>
+      <div class="reveal" style="--delay:0.1s">
+        <div class="stat-grid">
+          <div class="stat-box">
+            <span class="stat-num" data-target="2">2</span>
+            <span class="stat-label">Years in Technical Consulting</span>
           </div>
-          <div class="project-tags" style="display: flex; gap: 8px; margin-bottom: 12px; align-items: center;">
-            <span class="tag work" style="color: #d4af37; border: 1px solid #d4af37; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">Work</span>
-            <span class="tag role" style="color: #a0aec0; border: 1px solid #4a5568; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem;">Technical Consultant</span>
+          <div class="stat-box">
+            <span class="stat-num" data-target="2">2</span>
+            <span class="stat-label">Applause Awards Received</span>
           </div>
-          <div class="project-tech" style="margin-bottom: 12px; font-weight: 500; display: block;">Real-Time B2B Integration| O2C</div>
-          <p class="project-description" style="font-size: 0.95rem; line-height: 1.5; margin-top: 0; margin-bottom: 16px;">
-            Developed integration flows for a greenfield SAP implementation, connecting the core ERP with an external 3PL Warehouse Management System. Built the bidirectional data pipeline for the Order-to-Cash (O2C) cycle: configured outbound interfaces to transmit delivery requests to the warehouse in real time, and designed inbound interfaces to process shipping confirmations, automatically updating inventory and billing statuses in SAP.
-          </p>
         </div>
       </div>
-
-      <div class="project-card reveal" style="flex: 1; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box;">
-        <div>
-          <div class="project-header">
-            <h3 style="margin-top: 0; margin-bottom: 12px;">Python Bug Detection via Transformers</h3>
-          </div>
-          <div class="project-tags" style="display: flex; gap: 8px; margin-bottom: 12px; align-items: center;">
-            <span class="tag academic" style="color: #d4af37; border: 1px solid #d4af37; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">Engineering Project</span>
-          </div>
-          <div class="project-tech" style="margin-bottom: 12px; font-weight: 500; display: block;">Flask | Transformers | T5 | CodeT5 | BART</div>
-          <p class="project-description" style="font-size: 0.95rem; line-height: 1.5; margin-top: 0; margin-bottom: 16px;">
-            Engineered an intelligent code analysis system that acts as a comprehensive compiler for Python, simultaneously detecting over 20 distinct categories of syntax, type, and value errors to reduce workflow interruptions.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="flex: 1; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box;">
-        <div>
-          <div class="project-header">
-            <h3 style="margin-top: 0; margin-bottom: 12px;">Smart Coal Mine Monitoring using IoT</h3>
-          </div>
-          <div class="project-tags" style="display: flex; gap: 8px; margin-bottom: 12px; align-items: center;">
-            <span class="tag academic" style="color: #d4af37; border: 1px solid #d4af37; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">Engineering Project</span>
-          </div>
-          <div class="project-tech" style="margin-bottom: 12px; font-weight: 500; display: block;">IoT | PHP | HTML/JS | Cisco Packet Tracer</div>
-          <p class="project-description" style="font-size: 0.95rem; line-height: 1.5; margin-top: 0; margin-bottom: 16px;">
-            Developed a hazardous-environment safety monitoring system integrating wearable IoT sensors onto clothing. Used a PHP backend to display live environmental analytics and trigger automated local and remote alarms during emergencies.
-          </p>
-        </div>
-      </div>
-      
     </div>
   </div>
 </section>
 
-  <section class="section gallery-section" id="gallery">
-    <div class="container">
-      <div class="section-label">07 · Gallery</div>
-      <h2 class="section-heading reveal">Moments That Matter</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item reveal" style="--delay:0.1s">
-          <img src="AppreciationAtDeloitte.jpg" alt="Appreciation at Deloitte" loading="lazy" />
-          <div class="gallery-overlay"><span>Applause Awards Announcement at Deloitte</span></div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.15s">
-          <img src="XIMBResult.jpg" alt="XIMB Result Day" loading="lazy" />
-          <div class="gallery-overlay"><span>XIMB Result Day</span></div>
-        </div>
-        <div class="gallery-item reveal" style="--delay:0.15s">
-          <img src="XIMB Registration Day.jpg" alt="XIMB Registration Day" loading="lazy" />
-          <div class="gallery-overlay"><span>First Day at XIMB!</span></div>
+<!-- ═══ JOURNEY ═══ -->
+<section class="section journey-section" id="journey">
+  <div class="container">
+    <div class="s-tag reveal">02 · journey</div>
+    <h2 class="s-head reveal">The Road <em>That Led Here</em></h2>
+    <p class="s-sub reveal">Every milestone shaped the way I think, lead, and grow.</p>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2003</div>
+        <div class="tl-card"><h3>Born in Hyderabad, Telangana</h3><p>Growing up in a family with early exposure to the IT industry shaped my interest in technology and problem-solving.</p></div>
+      </div>
+      <div class="tl-item reveal" style="--delay:0.05s">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2015–2018</div>
+        <div class="tl-card"><h3>High School — Sri Chaitanya Techno School</h3><p>Telangana Board of Secondary Education · CGPA: 10</p></div>
+      </div>
+      <div class="tl-item reveal" style="--delay:0.1s">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2018–2020</div>
+        <div class="tl-card"><h3>Intermediate — Narayana Junior College</h3><p>TSBIE · Percentage: 98.4%</p></div>
+      </div>
+      <div class="tl-item reveal" style="--delay:0.15s">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2020–2024</div>
+        <div class="tl-card"><h3>B.Tech CSE — CBIT, Hyderabad</h3><p>CGPA: 9.4 </p></div>
+      </div>
+      <div class="tl-item reveal" style="--delay:0.2s">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2024–2026</div>
+        <div class="tl-card">
+          <h3>SAP Integration Developer — Deloitte USI Consulting</h3>
+          <p>Greenfield SAP implementation for a Fortune 500 Healthcare client. Recognised with multiple Applause Awards during FY 2025–26.</p>
+          <span class="tl-highlight-tag">DEV Top Performer</span>
         </div>
       </div>
+      <div class="tl-item reveal" style="--delay:0.25s">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2026</div>
+        <div class="tl-card"><h3>XAT 2026 — 99.25 Overall Percentile</h3><p>QADI: 99.16 · DM: 98.5 · VARC: 79.9</p></div>
+      </div>
+      <div class="tl-item reveal" style="--delay:0.3s">
+        <div class="tl-dot gold"></div>
+        <div class="tl-year">2026 →</div>
+        <div class="tl-card hl"><h3>MBA-BM — XIM University, Bhubaneswar</h3><p>Currently in the MBA-BM program. The next chapter of a purposeful journey — one I'm writing with intention.</p></div>
+      </div>
     </div>
-  </section>
-
- <section class="section why-section" id="strengths">
- <div class="container">
-   <div class="section-label">08 · My Strengths</div>
-   <h2 class="section-heading reveal">What I bring to the table</h2>
-   
-<div class="why-grid">
-
- <div class="why-card reveal">
-   <div class="why-number">01</div>
-   <h3>Ownership & Initiative</h3>
-   <p>I don't wait for opportunities to be assigned. Whether it's learning a new technology, exploring adjacent workstreams, or solving unexpected challenges, I take initiative and look for ways to create value.</p>
- </div>
-
- <div class="why-card reveal">
-   <div class="why-number">02</div>
-   <h3>Cross-Functional Thinking</h3>
-   <p>Working in SAP consulting has taught me to bridge the gap between business and technology. Whether collaborating with functional teams, technical developers, or business stakeholders, I can translate requirements across domains and align everyone toward a common goal.</p>
- </div>
-
- <div class="why-card reveal">
-   <div class="why-number">03</div>
-   <h3>Calm Under Pressure</h3>
-   <p>During a demanding go-live phase, our team resolved nearly 50 defects over two months while working extended hours, weekends, and holidays. Staying composed helped me prioritize effectively and contribute to smooth project delivery.</p>
- </div>
-
-</div>
-
- </div>
+  </div>
 </section>
 
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="section-label">09 · Connect</div>
-      <h2 class="section-heading reveal">Let's Start a Conversation</h2>
-      <p class="section-sub reveal">I'd love to connect — whether it's about a project, a club, or just a good movie recommendation.</p>
-      <div class="contact-layout">
-        <div class="contact-info reveal">
-          <a href="mailto:arjun.sharma@ximb.ac.in" class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <span class="contact-label">Email</span>
-              <span class="contact-value">tanishrohilcbit@gmail.com</span>
-            </div>
-          </a>
-          <div class="contact-item location">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div>
-              <span class="contact-label">Phone</span>
-              <span class="contact-value">+91 837 455 2224</span>
-            </div>
+<!-- ═══ SKILLS ═══ -->
+<section class="section skills-section" id="skills">
+  <div class="container">
+    <div class="s-tag reveal">03 · competencies</div>
+    <h2 class="s-head reveal">Skills <em>Toolkit</em></h2>
+
+    <div class="skills-layout">
+      <!-- Left: bar charts -->
+      <div class="reveal">
+        <div class="skill-block">
+          <div class="skill-block-title">SAP & Integration</div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">SAP CPI</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
           </div>
-          <a href="https://www.linkedin.com/in/tanish-rohil-447b3a212/" class="contact-item">
-            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div>
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">linkedin.com/in/tanish-rohil-447b3a212/
-            </div>
-          </a>
-          <a href="https://github.com/tanishrohil" class="contact-item">
-            <div class="contact-icon"><i class="fab fa-github"></i></div>
-            <div>
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">github.com/tanishrohil</span>
-            </div>
-          </a>
-          <div class="contact-item location">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <span class="contact-label">Location</span>
-              <span class="contact-value">Bhubaneswar, Odisha (XIMB Campus)</span>
-            </div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">SAP PI/PO</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="60"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">SAP ABAP (Basics)</span><span class="skill-pct">60%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="40"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-block-title">Programming & Engineering</div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">Python</span><span class="skill-pct">78%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">C++</span><span class="skill-pct">70%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="70"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">SQL</span><span class="skill-pct">75%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-block-title">Consulting & Management</div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">Stakeholder Management</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="60"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">Agile / Scrum Methodology</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="60"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-top"><span class="skill-name">SIT & UAT Coordination</span><span class="skill-pct">84%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="84"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: tag cloud panels -->
+      <div class="reveal" style="--delay:0.1s; display:flex; flex-direction:column; gap:14px;">
+        <div class="skill-tags-panel">
+          <div class="stp-title">SAP Stack</div>
+          <div class="tags-cloud">
+            <span class="s-tag-item">SAP CPI</span>
+            <span class="s-tag-item">SAP S/4HANA</span>
+            <span class="s-tag-item">SAP ABAP</span>
+            <span class="s-tag-item">EDI / IDOC</span>
+            <span class="s-tag-item">OData</span>
+            <span class="s-tag-item">SOAP / REST</span>
+          </div>
+        </div>
+        <div class="skill-tags-panel">
+          <div class="stp-title">Dev Tools & Frameworks</div>
+          <div class="tags-cloud">
+            <span class="s-tag-item">Python</span>
+            <span class="s-tag-item">Flask</span>
+            <span class="s-tag-item">Transformers</span>
+            <span class="s-tag-item">C++</span>
+            <span class="s-tag-item">SQL</span>
+            <span class="s-tag-item">IoT / Arduino</span>
+            <span class="s-tag-item">HTML / CSS / JS</span>
+            <span class="s-tag-item">PHP</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-initials">TR</span>
-          <span>Tanish Rohil</span>
-        </div>
-        <p class="footer-copy">Crafted with intention</p>
-        <p class="footer-note">© 2026 Tanish Rohil. All rights reserved.</p>
+<!-- ═══ ACHIEVEMENTS ═══ -->
+<section class="section achievements-section" id="achievements">
+  <div class="container">
+    <div class="s-tag reveal">04 · achievements</div>
+    <h2 class="s-head reveal">Milestones <em>&amp; Recognition</em></h2>
+    <div class="ach-grid">
+      <div class="ach-card reveal" style="--delay:0.05s">
+        <span class="ach-icon">🏆</span>
+        <h3>Deloitte USI Applause Awards</h3>
+        <p>Received two distinct Applause Awards during FY 2024–26 for efforts during critical client go-live milestones.</p>
+      </div>
+      <div class="ach-card reveal" style="--delay:0.1s">
+        <span class="ach-icon">📄</span>
+        <h3>International Research Presentation</h3>
+        <p>Presented "Python source code Analysis for Bug Detection using Transformers" at the international ERCICA-2024 Conference.</p>
+      </div>
+      <div class="ach-card reveal" style="--delay:0.15s">
+        <span class="ach-icon">🔏</span>
+        <h3>Published Design Patent</h3>
+        <p>Successfully published a design patent for "Real time Data Monitoring Smart Mining Jacket" — an innovative industrial safety framework.</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+<!-- ═══ INTERESTS ═══ -->
+<section class="section interests-section" id="interests">
+  <div class="container">
+    <div class="s-tag reveal">05 · interests</div>
+    <h2 class="s-head reveal">Beyond the <em>Classroom</em></h2>
+    <p class="s-sub reveal">The activities that keep me energized, entertained, and constantly learning.</p>
+    <div class="interests-grid">
+      <div class="interest-card reveal" style="--delay:0.05s">
+        <span class="interest-icon">🏏</span>
+        <h4>Cricket</h4>
+        <p>Whether playing with friends or following international tournaments, cricket has taught me teamwork, resilience, and performing under pressure.</p>
+      </div>
+      <div class="interest-card reveal" style="--delay:0.1s">
+        <span class="interest-icon">🤼</span>
+        <h4>Professional Wrestling</h4>
+        <p>A long-time WWE fan — branding, storytelling, and audience engagement through the lens of sport entertainment.</p>
+      </div>
+      <div class="interest-card reveal" style="--delay:0.15s">
+        <span class="interest-icon">🎬</span>
+        <h4>Movies</h4>
+        <p>From action-packed blockbusters to thought-provoking dramas, movies offer new perspectives and insights into different cultures and ideas.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="script_updated.js"></script>
+<!-- ═══ PROJECTS ═══ -->
+<section class="section projects-section" id="projects">
+  <div class="container">
+    <div class="s-tag reveal">06 · projects</div>
+    <h2 class="s-head reveal">Selected <em>Works</em></h2>
+    <div class="projects-grid">
+
+      <div class="proj-card reveal" style="--delay:0.05s">
+        <div class="proj-editor-bar">
+          <span class="pe-dot" style="background:#ff5f57"></span>
+          <span class="pe-dot" style="background:#febc2e"></span>
+          <span class="pe-dot" style="background:#28c840"></span>
+          <span class="pe-filename">integration.sap</span>
+          <span class="pe-lang">SAP CPI</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-type pt-work">Work · Consultant</span>
+          <h3>SAP ERP &amp; 3PL WMS Integration</h3>
+          <span class="proj-stack">// Real-Time B2B Integration · O2C</span>
+          <p>Developed integration flows for a greenfield SAP implementation, connecting ERP with external 3PL WMS. Built bidirectional data pipeline for Order-to-Cash: outbound delivery requests to warehouse and inbound shipping confirmations updating inventory and billing statuses in SAP.</p>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="--delay:0.1s">
+        <div class="proj-editor-bar">
+          <span class="pe-dot" style="background:#ff5f57"></span>
+          <span class="pe-dot" style="background:#febc2e"></span>
+          <span class="pe-dot" style="background:#28c840"></span>
+          <span class="pe-filename">bug_detector.py</span>
+          <span class="pe-lang">Python / ML</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-type pt-eng">Engineering</span>
+          <h3>Python Bug Detection via Transformers</h3>
+          <span class="proj-stack">// Flask · T5 · CodeT5 · BART</span>
+          <p>Engineered an intelligent code analysis system that acts as a comprehensive compiler for Python, simultaneously detecting 20+ categories of syntax, type, and value errors to reduce development workflow interruptions.</p>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="--delay:0.15s">
+        <div class="proj-editor-bar">
+          <span class="pe-dot" style="background:#ff5f57"></span>
+          <span class="pe-dot" style="background:#febc2e"></span>
+          <span class="pe-dot" style="background:#28c840"></span>
+          <span class="pe-filename">mine_monitor.ino</span>
+          <span class="pe-lang">IoT / C++</span>
+        </div>
+        <div class="proj-body">
+          <span class="proj-type pt-eng">Engineering</span>
+          <h3>Smart Coal Mine Monitoring</h3>
+          <span class="proj-stack">// IoT · PHP · HTML/JS · Cisco Packet Tracer</span>
+          <p>Developed a hazardous-environment safety monitoring system integrating wearable IoT sensors onto clothing. PHP backend displays live environmental analytics and triggers automated local and remote alarms during emergencies.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="s-tag reveal">07 · gallery</div>
+    <h2 class="s-head reveal">Moments <em>That Matter</em></h2>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" style="--delay:0.05s">
+        <img src="AppreciationAtDeloitte.jpg" alt="Applause Awards at Deloitte" loading="lazy" />
+        <div class="gallery-overlay"><span class="g-label">Applause Awards · Deloitte</span></div>
+      </div>
+      <div class="gallery-item reveal" style="--delay:0.1s">
+        <img src="XIMBResult.jpg" alt="XIMB Result Day" loading="lazy" />
+        <div class="gallery-overlay"><span class="g-label">XIMB Result Day</span></div>
+      </div>
+      <div class="gallery-item reveal" style="--delay:0.15s">
+        <img src="XIMB Registration Day.jpg" alt="XIMB Registration Day" loading="lazy" />
+        <div class="gallery-overlay"><span class="g-label">First Day at XIMB!</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STRENGTHS ═══ -->
+<section class="section strengths-section" id="strengths">
+  <div class="container">
+    <div class="s-tag reveal">08 · strengths</div>
+    <h2 class="s-head reveal">What I Bring <em>to the Table</em></h2>
+    <div class="str-grid">
+      <div class="str-card reveal" style="--delay:0.05s">
+        <span class="str-num">function_01()</span>
+        <h3>Ownership &amp; Initiative</h3>
+        <p>I don't wait for opportunities to be assigned. Whether learning a new technology, exploring adjacent workstreams, or solving unexpected challenges — I take initiative.</p>
+      </div>
+      <div class="str-card reveal" style="--delay:0.1s">
+        <span class="str-num">function_02()</span>
+        <h3>Cross-Functional Thinking</h3>
+        <p>SAP consulting taught me to bridge business and technology. I can translate requirements across functional, technical, and stakeholder domains and align everyone toward a common goal.</p>
+      </div>
+      <div class="str-card reveal" style="--delay:0.15s">
+        <span class="str-num">function_03()</span>
+        <h3>Calm Under Pressure</h3>
+        <p>During a demanding go-live phase, our team resolved nearly 50 defects over two months with extended hours and weekends. Staying composed helped me prioritize effectively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="s-tag reveal">09 · connect</div>
+    <h2 class="s-head reveal">Let's Start <em>a Conversation</em></h2>
+    <p class="s-sub reveal">I'd love to connect — whether it's about a project, a club, or just a good movie recommendation.</p>
+
+    <div class="contact-grid">
+      <div class="c-items reveal">
+        <a href="mailto:tanishrohilcbit@gmail.com" class="c-item">
+          <div class="c-icon"><i class="fas fa-envelope"></i></div>
+          <div><span class="c-lbl">Email</span><span class="c-val">tanishrohilcbit@gmail.com</span></div>
+        </a>
+        <div class="c-item">
+          <div class="c-icon"><i class="fas fa-phone"></i></div>
+          <div><span class="c-lbl">Phone</span><span class="c-val">+91 837 455 2224</span></div>
+        </div>
+        <a href="https://www.linkedin.com/in/tanish-rohil-447b3a212/" target="_blank" class="c-item">
+          <div class="c-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div><span class="c-lbl">LinkedIn</span><span class="c-val">linkedin.com/in/tanish-rohil-447b3a212/</span></div>
+        </a>
+        <a href="https://github.com/tanishrohil" target="_blank" class="c-item">
+          <div class="c-icon"><i class="fab fa-github"></i></div>
+          <div><span class="c-lbl">GitHub</span><span class="c-val">github.com/tanishrohil</span></div>
+        </a>
+        <div class="c-item">
+          <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><span class="c-lbl">Location</span><span class="c-val">Bhubaneswar, Odisha (XIMB Campus)</span></div>
+        </div>
+      </div>
+
+      <div class="contact-terminal reveal" style="--delay:0.12s">
+        <div class="ct-header">
+          <span style="width:8px;height:8px;border-radius:50%;background:#ff5f57;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#febc2e;display:inline-block;margin:0 4px"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#28c840;display:inline-block"></span>
+          &nbsp;contact.json
+        </div>
+        <div class="ct-body" style="font-family:var(--font-mono);font-size:0.78rem;line-height:2;">
+          <div><span class="t-m">{</span></div>
+          <div style="padding-left:18px"><span class="t-p">"name"</span><span class="t-m">:</span> <span class="t-a">"Tanish Rohil Gali"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"role"</span><span class="t-m">:</span> <span class="t-a">"MBA-BM Candidate"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"institute"</span><span class="t-m">:</span> <span class="t-a">"XIM University"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"email"</span><span class="t-m">:</span> <span class="t-g">"tanishrohilcbit@gmail.com"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"phone"</span><span class="t-m">:</span> <span class="t-g">"+91 837 455 2224"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"linkedin"</span><span class="t-m">:</span> <span class="t-b">"tanish-rohil-447b3a212"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"github"</span><span class="t-m">:</span> <span class="t-b">"tanishrohil"</span><span class="t-m">,</span></div>
+          <div style="padding-left:18px"><span class="t-p">"open_to"</span><span class="t-m">:</span> [<span class="t-a">"clubs"</span><span class="t-m">,</span> <span class="t-a">"projects"</span><span class="t-m">,</span> <span class="t-a">"case competitions"</span>]</div>
+          <div><span class="t-m">}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="footer-logo">TR</span>
+      <span class="footer-copy">Tanish Rohil Gali</span>
+    </div>
+    <span class="footer-copy" style="font-family:var(--font-mono)">$ echo "crafted --with intention"</span>
+    <span class="footer-copy">© 2026 Tanish Rohil Gali. All rights reserved.</span>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
