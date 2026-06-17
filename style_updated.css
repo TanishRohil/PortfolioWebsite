@@ -724,3 +724,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .hero-photo-ring { animation: none; }
   .scroll-line { animation: none; }
 }
+
+.hero-typewriter-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+  margin-bottom: 24px;
+}
+
+.hero-typewriter {
+  font-size: 1.35rem;
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  font-style: italic;
+  padding-right: 4px;
+  display: inline-block;
+  min-height: 1.6rem;
+}
+
+/* Adds the cursor dynamically only when we add the active-cursor utility class */
+.active-cursor {
+  border-right: 2px solid var(--accent);
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--accent); }
+}
