@@ -394,3 +394,48 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 })();
 
 console.log('%c✨ Portfolio by Tanish Rohil', 'color:#C9A84C;font-family:serif;font-size:1.1rem;font-style:italic;');
+
+/* ──────────────────────────────────
+   SEQUENTIAL DOUBLE-LINE TYPEWRITER
+────────────────────────────────── */
+(function initTwoLineTypewriter() {
+  const line1 = $('#typewriter1');
+  const line2 = $('#typewriter2');
+  if (!line1 || !line2) return;
+
+  const phrase1 = 'Motivation is what gets you started.';
+  const phrase2 = 'Habit is what keeps you going.';
+  
+  let ci1 = 0;
+  let ci2 = 0;
+
+  // Set initial cursor on line 1
+  line1.classList.add('active-cursor');
+
+  function typeLine1() {
+    if (ci1 <= phrase1.length) {
+      line1.textContent = phrase1.slice(0, ci1++);
+      setTimeout(typeLine1, 65); // Speed for first line
+    } else {
+      // Line 1 is done! Swap the cursor down to line 2 after a brief pause
+      setTimeout(() => {
+        line1.classList.remove('active-cursor');
+        line2.classList.add('active-cursor');
+        typeLine2();
+      }, 500);
+    }
+  }
+
+  function typeLine2() {
+    if (ci2 <= phrase2.length) {
+      line2.textContent = phrase2.slice(0, ci2++);
+      setTimeout(typeLine2, 65); // Speed for second line
+    } else {
+      // Optional: If you want the cursor to stop blinking when fully done, uncomment line below:
+      // line2.classList.remove('active-cursor');
+    }
+  }
+
+  // Fire the chain animation shortly after page load
+  setTimeout(typeLine1, 800);
+})();
